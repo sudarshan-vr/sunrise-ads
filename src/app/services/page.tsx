@@ -16,7 +16,7 @@ export default function ServicesPage() {
               Our Services
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Comprehensive outdoor advertising solutions tailored to your brand's needs
+              Comprehensive outdoor advertising solutions tailored to your brand&apos;s needs
             </p>
           </div>
           <ServicesSection />
