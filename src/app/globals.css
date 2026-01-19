@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Gradient colors */
+  --color-primary: #07be8a;
+  --color-skyblue: #79adff;
+  --color-lightskyblue: #9cc2dd;
+  --color-dark: #172023;
+
+  /* Shadow */
+  --shadow-3xl: 0px 4px 6px -2px #0000000D, 0px 10px 15px -3px #0000001A;
+  --shadow-auth: 0 20px 25px -5px #0000001a;
+  --shadow-dark-auth: rgba(255, 255, 255, 0.1) 0px 12px 28px 0px, rgba(255, 255, 255, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+  /* font size */
+  --text-xm: 1.125rem;
+  --text-9xl: 6.5rem;
+  --text-40: 2.5rem;
+  --text-52: 3.25rem;
+  --text-sm: 0.875rem;
+
+  /* Breakpoint */
+  --breakpoint-xs: 23.438rem;
+  /* 375px */
+  --breakpoint-mobile: 32.5rem;
+  /* 520px */
+
+  /* breakpoint / max-w */
+  --spacing-45p: 45%;
+  --spacing-85p: 85%;
+  --spacing-90p: 90%;
+  --spacing-68: 17.375rem;
+
+  --spacing-540: 33.75rem;
+  /* 540px */
+  --spacing-8xl: 87.5rem;
+  /* 1400px */
+
+  /* animation */
+  --animate-slide: slide 20s linear infinite;
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-103%);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+section {
+  @apply py-24
+}
+
+.blog-details p, .blog-details hr {
+  @apply mb-8;
+}
+
+.blog-details strong {
+  @apply font-bold dark:text-white;
+}
+
+.blog-details ul {
+  @apply list-none space-y-3 mb-10;
+}
+
+.blog-details ul li {
+  @apply mb-0 relative pl-4 text-base leading-[1.2] before:absolute before:w-1 before:h-1 before:rounded-full before:bg-dark dark:before:bg-white/60 before:top-2 before:left-0;
+}
+
+.blog-details ol {
+  @apply mb-8 list-inside list-decimal space-y-3;
+}
+
+.blog-details ol li {
+  @apply mb-0
+}
+
+.blog-details h1 {
+  @apply mb-8 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.28];
+}
+
+.blog-details h2 {
+  @apply mb-2 text-2xl font-bold text-dark dark:text-white sm:text-3xl md:text-[35px] md:leading-[1.28];
+}
+
+.blog-details h3 {
+  @apply mb-6 text-2xl text-dark dark:text-white sm:leading-[40px];
+}
+
+.blog-details h4 {
+  @apply mb-6 text-xl leading-[1.2] text-dark dark:text-white;
+}
+
+.blog-details hr {
+  @apply border-white
+}
+
+.blog-details p {
+  @apply text-dark dark:text-white text-xm leading-[1.2]
+}
