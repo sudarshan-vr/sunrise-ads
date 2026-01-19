@@ -15,9 +15,9 @@ const Hero: React.FC = () => {
               <Link href="/contactus" className='px-8 py-4 border border-white dark:border-dark bg-white dark:bg-dark text-dark dark:text-white duration-300 dark:hover:text-dark hover:bg-transparent hover:text-white text-base font-semibold rounded-full hover:cursor-pointer'>
                 Get in touch
               </Link>
-              <button className='px-8 py-4 border border-white dark:border-dark bg-transparent text-white dark:text-dark hover:bg-white dark:hover:bg-dark dark:hover:text-white hover:text-dark duration-300 text-base font-semibold rounded-full hover:cursor-pointer'>
-                View Details
-              </button>
+              <Link href="/services" className='px-8 py-4 border border-white dark:border-dark bg-transparent text-white dark:text-dark hover:bg-white dark:hover:bg-dark dark:hover:text-white hover:text-dark duration-300 text-base font-semibold rounded-full hover:cursor-pointer'>
+                Our Services
+              </Link>
             </div>
           </div>
           <div className='hidden md:block absolute -top-2 -right-68'>
@@ -31,9 +31,9 @@ const Hero: React.FC = () => {
             />
           </div>
         </div>
-        <div className='md:absolute bottom-0 md:-right-68 xl:right-0 bg-white dark:bg-black py-12 px-8 mobile:px-16 md:pl-16 md:pr-[295px] rounded-2xl md:rounded-none md:rounded-tl-2xl mt-24'>
-          <div className='grid grid-cols-2 sm:grid-cols-4 md:flex gap-16 md:gap-24 sm:text-center dark:text-white text-black'>
-            <div className='flex flex-col sm:items-center gap-3'>
+        <div className='md:absolute bottom-0 left-1/2 md:-translate-x-1/2 w-full max-w-3xl sm:max-w-4xl md:max-w-7xl mx-auto px-4 bg-white dark:bg-black py-12 rounded-2xl md:rounded-tl-2xl mt-24'>
+          <div className='grid grid-cols-2 gap-y-8 sm:grid-cols-4 md:flex justify-items-center justify-center gap-x-4 sm:gap-x-8 md:gap-16 lg:gap-24 text-center dark:text-white text-black w-full'>
+            <div className='flex flex-col items-center gap-3 w-full'>
               <Image
                 src={'/images/hero/buildings.png'}
                 alt='sofa'
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
                 1000+ Buildings Fiberized Pan India
               </p>
             </div>
-            <div className='flex flex-col sm:items-center gap-3'>
+            <div className='flex flex-col items-center gap-3 w-full'>
               <Image
                 src={'/images/hero/maps.png'}
                 alt='sofa'
@@ -75,7 +75,7 @@ const Hero: React.FC = () => {
                 300+ Million sq.Ft. Area covered
               </p>
             </div>
-            <div className='flex flex-col sm:items-center gap-3'>
+            <div className='flex flex-col items-center gap-3 w-full'>
               <Image
                 src={'/images/hero/cities.png'}
                 alt='sofa'
@@ -93,13 +93,10 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <p className='text-sm sm:text-base font-normal text-inherit'>
-                20+
-
-Presence in cities
-across India
+                20+ Presence in cities across India
               </p>
             </div>
-            <div className='flex flex-col sm:items-center gap-3'>
+            <div className='flex flex-col items-center gap-3 w-full'>
               <p className='text-2xl sm:text-3xl font-medium text-inherit'>
                 300+
               </p>

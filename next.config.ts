@@ -8,8 +8,15 @@ const nextConfig: NextConfig = {
   },
 
   images: {
-    domains: ["images.unsplash.com"],
+    domains: ["images.unsplash.com", "cdn.gamma.app"],
     formats: ["image/avif", "image/webp"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.gamma.app',
+        pathname: '/**',
+      },
+    ],
   },
 };
 

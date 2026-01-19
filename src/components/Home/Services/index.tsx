@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Categories = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-x-hidden">
       <div className="absolute left-0 top-0">
         <Image
           src="/images/categories/Vector.svg"
@@ -23,7 +23,7 @@ const Categories = () => {
           unoptimized={true}
         />
       </div>
-      <div className="container max-w-8xl mx-auto px-5 2xl:px-0 relative z-10">
+      <div className="container max-w-8xl mx-auto px-4 sm:px-5 2xl:px-0 relative z-10">
         <div className="grid grid-cols-12 items-center gap-10">
           <div className="lg:col-span-6 col-span-12">
             <p className="text-dark/75 dark:text-white/75 text-base font-semibold flex gap-2.5">
@@ -38,18 +38,18 @@ const Categories = () => {
               Discover a diverse range of premium properties, from luxurious apartments  to spacious villas, tailored to your needs
             </p>
             <Link href="/properties" className="py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark duration-300">
-              Our Services
+              View Gallery
             </Link>
           </div>
           <div className="lg:col-span-6 col-span-12">
-            <div className="relative rounded-2xl overflow-hidden group">
+            <div className="relative rounded-2xl overflow-hidden group w-full">
               <Link href="/residential-homes">
                 <Image
                   src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image17.png"
                   alt="villas"
                   width={680}
                   height={386}
-                  className="w-full"
+                  className="w-full h-auto max-w-full"
                   unoptimized={true}
                 />
               </Link>
@@ -71,14 +71,14 @@ const Categories = () => {
             </div>
           </div>
           <div className="lg:col-span-6 col-span-12">
-            <div className="relative rounded-2xl overflow-hidden group">
+            <div className="relative rounded-2xl overflow-hidden group w-full">
               <Link href="/luxury-villa">
                 <Image
                   src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image30.jpeg"
                   alt="villas"
                   width={680}
                   height={386}
-                  className="w-full"
+                  className="w-full h-auto max-w-full"
                   unoptimized={true}
                 />
               </Link>
@@ -99,15 +99,15 @@ const Categories = () => {
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-3 col-span-6">
-            <div className="relative rounded-2xl overflow-hidden group">
+          <div className="lg:col-span-3 col-span-6 w-full">
+            <div className="relative rounded-2xl overflow-hidden group w-full">
               <Link href="/appartment">
                 <Image
                   src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image8.jpeg"
                   alt="villas"
                   width={320}
                   height={386}
-                  className="w-full"
+                  className="w-full h-auto max-w-full"
                   unoptimized={true}
                 />
               </Link>
@@ -128,15 +128,15 @@ const Categories = () => {
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-3 col-span-6">
-            <div className="relative rounded-2xl overflow-hidden group">
+          <div className="lg:col-span-3 col-span-6 w-full">
+            <div className="relative rounded-2xl overflow-hidden group w-full">
               <Link href="/office-spaces">
                 <Image
                   src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image26.jpeg"
                   alt="office"
                   width={320}
-                  height={386}
-                  className="w-full"
+                  height={370}
+                  className="w-full h-auto max-w-full"
                   unoptimized={true}
                 />
               </Link>
