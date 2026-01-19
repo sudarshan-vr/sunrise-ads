@@ -45,7 +45,7 @@ const Categories = () => {
             <div className="relative rounded-2xl overflow-hidden group">
               <Link href="/residential-homes">
                 <Image
-                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image4.jpeg"
+                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image17.png"
                   alt="villas"
                   width={680}
                   height={386}
@@ -74,7 +74,7 @@ const Categories = () => {
             <div className="relative rounded-2xl overflow-hidden group">
               <Link href="/luxury-villa">
                 <Image
-                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image9.jpeg"
+                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image30.jpeg"
                   alt="villas"
                   width={680}
                   height={386}
@@ -103,7 +103,7 @@ const Categories = () => {
             <div className="relative rounded-2xl overflow-hidden group">
               <Link href="/appartment">
                 <Image
-                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image5.jpg"
+                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image8.jpeg"
                   alt="villas"
                   width={320}
                   height={386}
@@ -132,7 +132,7 @@ const Categories = () => {
             <div className="relative rounded-2xl overflow-hidden group">
               <Link href="/office-spaces">
                 <Image
-                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image6.jpeg"
+                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image26.jpeg"
                   alt="office"
                   width={320}
                   height={386}
