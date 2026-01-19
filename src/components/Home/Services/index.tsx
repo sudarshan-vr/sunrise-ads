@@ -28,24 +28,24 @@ const Categories = () => {
           <div className="lg:col-span-6 col-span-12">
             <p className="text-dark/75 dark:text-white/75 text-base font-semibold flex gap-2.5">
               <Icon icon="ph:house-simple-fill" className="text-2xl text-primary " />
-              Services
+              About us
             </p>
             <h2 className="lg:text-52 text-40 mt-4 mb-2 lg:max-w-full font-medium leading-[1.2] text-dark dark:text-white">
-              Explore best properties
+              Explore best testimonials
               with expert services.
             </h2>
             <p className="text-dark/50 dark:text-white/50 text-lg lg:max-w-full leading-[1.3] md:max-w-3/4">
               Discover a diverse range of premium properties, from luxurious apartments  to spacious villas, tailored to your needs
             </p>
             <Link href="/properties" className="py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark duration-300">
-              View properties
+              Our Services
             </Link>
           </div>
           <div className="lg:col-span-6 col-span-12">
             <div className="relative rounded-2xl overflow-hidden group">
               <Link href="/residential-homes">
                 <Image
-                  src="/images/categories/villas.jpg"
+                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image4.jpeg"
                   alt="villas"
                   width={680}
                   height={386}
@@ -61,7 +61,7 @@ const Categories = () => {
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-white text-2xl">
-                    Residential Homes
+                    Hordings
                   </h3>
                   <p className="text-white/80 text-base leading-6">
                     Experience elegance and comfort with our exclusive luxury villas, designed  for sophisticated living.
@@ -74,7 +74,7 @@ const Categories = () => {
             <div className="relative rounded-2xl overflow-hidden group">
               <Link href="/luxury-villa">
                 <Image
-                  src="/images/categories/luxury-villa.jpg"
+                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image9.jpeg"
                   alt="villas"
                   width={680}
                   height={386}
@@ -90,7 +90,7 @@ const Categories = () => {
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-white text-2xl">
-                    Luxury villas
+                    Pole Kiosks
                   </h3>
                   <p className="text-white/80 text-base leading-6">
                     Experience elegance and comfort with our exclusive luxury villas, designed for sophisticated living.
@@ -103,7 +103,7 @@ const Categories = () => {
             <div className="relative rounded-2xl overflow-hidden group">
               <Link href="/appartment">
                 <Image
-                  src="/images/categories/appartment.jpg"
+                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image5.jpg"
                   alt="villas"
                   width={320}
                   height={386}
@@ -119,7 +119,7 @@ const Categories = () => {
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-white text-2xl">
-                    Appartment
+                    Gantry Branding
                   </h3>
                   <p className="text-white/80 text-base leading-6">
                     Experience elegance and comfort with our exclusive luxury villas, designed  for sophisticated living.
@@ -132,7 +132,7 @@ const Categories = () => {
             <div className="relative rounded-2xl overflow-hidden group">
               <Link href="/office-spaces">
                 <Image
-                  src="/images/categories/office.jpg"
+                  src="https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image6.jpeg"
                   alt="office"
                   width={320}
                   height={386}
@@ -148,7 +148,7 @@ const Categories = () => {
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-white text-2xl">
-                    Office Spaces
+                    Bus Shelter Branding
                   </h3>
                   <p className="text-white/80 text-base leading-6">
                     Experience elegance and comfort with our exclusive luxury villas, designed  for sophisticated living.

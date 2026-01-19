@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
           <div className='relative text-white dark:text-dark text-center md:text-start z-10'>
             <p className='text-inherit text-xm font-medium'>Palm springs, CA</p>
             <h1 className='text-inherit text-6xl sm:text-9xl font-semibold -tracking-wider md:max-w-45p mt-4 mb-6'>
-              Futuristic Haven
+              Sunrise Advertising
             </h1>
             <div className='flex flex-col xs:flex-row justify-center md:justify-start gap-4'>
               <Link href="/contactus" className='px-8 py-4 border border-white dark:border-dark bg-white dark:bg-dark text-dark dark:text-white duration-300 dark:hover:text-dark hover:bg-transparent hover:text-white text-base font-semibold rounded-full hover:cursor-pointer'>
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
           <div className='grid grid-cols-2 sm:grid-cols-4 md:flex gap-16 md:gap-24 sm:text-center dark:text-white text-black'>
             <div className='flex flex-col sm:items-center gap-3'>
               <Image
-                src={'/images/hero/sofa.svg'}
+                src={'/images/hero/buildings.png'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <Image
-                src={'/images/hero/dark-sofa.svg'}
+                src={'https://ranext.in/img/cities-icon.png'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -51,12 +51,12 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <p className='text-sm sm:text-base font-normal text-inherit'>
-                4 Bedrooms
+                1000+ Buildings Fiberized Pan India
               </p>
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
               <Image
-                src={'/images/hero/tube.svg'}
+                src={'/images/hero/maps.png'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <Image
-                src={'/images/hero/dark-tube.svg'}
+                src={'https://ranext.in/img/area-covered-icon.png'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -72,12 +72,12 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <p className='text-sm sm:text-base font-normal text-inherit'>
-                4 Restroom
+                300+ Million sq.Ft. Area covered
               </p>
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
               <Image
-                src={'/images/hero/parking.svg'}
+                src={'/images/hero/cities.png'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <Image
-                src={'/images/hero/dark-parking.svg'}
+                src={'https://ranext.in/img/cities-across-icon.png'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -93,15 +93,18 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <p className='text-sm sm:text-base font-normal text-inherit'>
-                Parking space
+                20+
+
+Presence in cities
+across India
               </p>
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
               <p className='text-2xl sm:text-3xl font-medium text-inherit'>
-                $4,750,000
+                300+
               </p>
               <p className='text-sm sm:text-base font-normal text-black/50 dark:text-white/50'>
-                For selling price
+                Expert Professionals Nationwide
               </p>
             </div>
           </div>
