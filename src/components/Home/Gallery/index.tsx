@@ -25,7 +25,7 @@ export default function Clients() {
   
   // Group logos into chunks of 4 for carousel slides
   const chunkSize = 4;
-  const logoChunks = [];
+  const logoChunks: string[][] = [];
   for (let i = 0; i < clientLogos.length; i += chunkSize) {
     logoChunks.push(clientLogos.slice(i, i + chunkSize));
   }
