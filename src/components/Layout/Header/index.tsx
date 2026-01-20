@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import NavLink from './Navigation/NavLink'
 import { useTheme } from 'next-themes'
 import { usePathname } from 'next/navigation'
+import Logo from './BrandLogo/Logo'
 
 const Header: React.FC = () => {
   const [sticky, setSticky] = useState(false)
@@ -38,13 +39,12 @@ const Header: React.FC = () => {
   const isHomepage = pathname === '/'
 
   return (
-    <header className={`fixed h-24 py-1 z-50 w-full bg-transparent transition-all duration-300 lg:px-0 px-4 ${sticky ? "top-3" : "top-0"}`}>
-      <nav className={`container mx-auto max-w-8xl flex items-center justify-between py-4 duration-300 ${sticky ? "shadow-lg bg-white dark:bg-dark rounded-full top-5 px-4 " : "shadow-none top-0"}`}>
-        <div className='flex justify-between items-center gap-2 w-full'>
-          <div>
+    <header className={`fixed h-24 py-1 z-50 w-full bg-transparent transition-all duration-300 ${sticky ? "top-3" : "top-0"}`}>
+      <nav className={`w-full ${sticky ? 'px-4' : 'px-0'}`}>
+        <div className={`flex items-center justify-between py-4 w-full mx-auto ${sticky ? 'max-w-[calc(100%-2rem)] md:max-w-[calc(100%-4rem)] lg:max-w-[calc(100%-6rem)] xl:max-w-[calc(100%-8rem)] 2xl:max-w-[1536px] bg-white dark:bg-dark shadow-lg rounded-full px-8' : 'max-w-8xl px-8'}`}>
+          <div className='-ml-2'>
             <Link href='/' className={`text-2xl font-bold ${isHomepage && !sticky ? 'text-white' : 'text-dark dark:text-white'}`}>
-              <span className='block leading-tight'>Sunrise</span>
-              <span className='block leading-tight'>Advertising</span>
+              <Logo />
             </Link>
           </div>
           <div className='flex items-center gap-2 sm:gap-6'>

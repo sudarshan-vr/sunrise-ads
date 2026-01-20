@@ -2,24 +2,17 @@ import Image from 'next/image'
 
 const Logo: React.FC = () => {
   return (
-    <>
+    <div className="relative h-12 w-12">
       <Image
-        src={'/images/header/dark-logo.svg'}
-        alt='logo'
-        width={150}
-        height={68}
+        src='/images/hero/logo.svg'
+        alt='Sunrise Advertising Logo'
+        fill
+        style={{ marginTop: '-0.22rem' }}
+        className='object-contain'
         unoptimized={true}
-        className='dark:hidden'
+        priority
       />
-      <Image
-        src={'/images/header/logo.svg'}
-        alt='logo'
-        width={150}
-        height={68}
-        unoptimized={true}
-        className='dark:block hidden'
-      />
-    </>
+    </div>
   )
 }
 

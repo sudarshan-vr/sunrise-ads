@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const clientLogos = [
@@ -19,37 +19,49 @@ const clientLogos = [
   'https://cdn.gamma.app/dcr8q2isiem5xdc/imports/pptx/73e44e08c87f52506b262017b7725d78/v2/fbf9590d54c04b138b086686f3649042/extracted/ppt/media/image44.jpg'
 ];
 
+// Duplicate the array to create a seamless loop
+const duplicatedLogos = [...clientLogos, ...clientLogos];
+
 export default function Clients() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  
-  // Group logos into chunks of 4 for carousel slides
-  const chunkSize = 4;
-  const logoChunks: string[][] = [];
-  for (let i = 0; i < clientLogos.length; i += chunkSize) {
-    logoChunks.push(clientLogos.slice(i, i + chunkSize));
-  }
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | null>(null);
+  const scrollPositionRef = useRef(0);
+  const speed = 0.5; // Adjust speed here (lower is slower)
 
-  const nextSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === logoChunks.length - 1 ? 0 : prevIndex + 1
-    );
-  }, [logoChunks.length]);
-
-  const prevSlide = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? logoChunks.length - 1 : prevIndex - 1
-    );
-  }, [logoChunks.length]);
-
+  // Animation logic
   useEffect(() => {
-    const timer = setInterval(() => {
-      if (!isHovered) {
-        nextSlide();
+    if (!containerRef.current) return;
+
+    const animate = () => {
+      if (!containerRef.current || isHovered) {
+        animationRef.current = requestAnimationFrame(animate);
+        return;
       }
-    }, 3000);
-    return () => clearInterval(timer);
-  }, [isHovered, nextSlide]);
+
+      const container = containerRef.current;
+      const maxScroll = container.scrollWidth / 2; // Since we duplicated the logos
+      
+      // Reset position to create infinite loop effect
+      if (scrollPositionRef.current >= maxScroll) {
+        scrollPositionRef.current = 0;
+        container.scrollLeft = 0;
+      } else {
+        scrollPositionRef.current += speed;
+        container.scrollLeft = scrollPositionRef.current;
+      }
+      
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+    
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isHovered]);
 
   return (
     <section className="py-16 bg-white dark:bg-dark">
@@ -64,68 +76,54 @@ export default function Clients() {
         </div>
 
         <div 
-          className="relative max-w-6xl mx-auto"
+          ref={containerRef}
+          className="w-full overflow-hidden relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {logoChunks.map((chunk, chunkIndex) => (
-                <div key={chunkIndex} className="w-full flex-shrink-0 grid grid-cols-2 md:grid-cols-4 gap-8 px-4">
-                  {chunk.map((logo, index) => (
-                    <div 
-                      key={`${chunkIndex}-${index}`}
-                      className="flex items-center justify-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg h-32 hover:shadow-lg transition-all duration-300"
-                    >
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={logo}
-                          alt={`Client Logo ${chunkIndex * chunkSize + index + 1}`}
-                          fill
-                          className="object-contain p-2"
-                          sizes="(max-width: 768px) 50vw, 25vw"
-                          unoptimized
-                        />
-                      </div>
-                    </div>
-                  ))}
+          <div className="flex w-max">
+            {duplicatedLogos.map((logo, index) => (
+              <div 
+                key={`${index}-${logo}`}
+                className="flex-shrink-0 mx-4 w-40 h-32 flex items-center justify-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-all duration-300"
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={logo}
+                    alt={`Client Logo ${index % clientLogos.length + 1}`}
+                    fill
+                    className="object-contain p-2"
+                    sizes="(max-width: 768px) 160px, 160px"
+                    unoptimized
+                  />
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-
           <button
-            onClick={prevSlide}
+            onClick={() => {
+              const container = containerRef.current;
+              if (container) {
+                container.scrollLeft -= 200;
+              }
+            }}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors z-10"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-6 h-6 text-gray-700 dark:text-gray-300" />
           </button>
           <button
-            onClick={nextSlide}
+            onClick={() => {
+              const container = containerRef.current;
+              if (container) {
+                container.scrollLeft += 200;
+              }
+            }}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors z-10"
             aria-label="Next slide"
           >
             <ChevronRight className="w-6 h-6 text-gray-700 dark:text-gray-300" />
           </button>
-
-          <div className="flex justify-center mt-8 space-x-2">
-            {logoChunks.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  index === currentIndex 
-                    ? 'bg-primary dark:bg-primary-400 w-6' 
-                    : 'bg-gray-300 dark:bg-gray-600'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import Hero from '@/components/Home/Hero'
-import Services from '@/components/Home/Services'
+import FeaturedProperty from '@/components/Home/FeaturedProperty'
 import Testimonial from '@/components/Home/Testimonial'
 import Gallery from '@/components/Home/Gallery'
 
@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <section id="services" className="py-20">
-        <Services />
+      <section className="py-20">
+        <FeaturedProperty />
       </section>
       <section className="py-20 bg-gray-50 dark:bg-dark/50">
         <Testimonial />

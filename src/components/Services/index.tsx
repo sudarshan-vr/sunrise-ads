@@ -53,31 +53,38 @@ const item = {
 
 export default function ServicesSection() {
   return (
-    <motion.div 
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-      variants={container}
-      initial="hidden"
-      animate="show"
-    >
-      {services.map((service) => (
-        <motion.div 
-          key={service.id} 
-          className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+    <div className="w-full">
+      <motion.div 
+        className="w-full max-w-[100vw] mx-auto px-2 sm:px-4"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 w-full">
+      {services.map((service, index) => (
+        <motion.div
+          key={service.id}
+          className="w-full h-full min-w-0"
           variants={item}
         >
-          <div className="relative h-48 w-full">
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="p-6">
+          <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+            <div className="relative w-full pt-[75%] overflow-visible">
+              <div className="absolute inset-0 p-2 flex items-center justify-center">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={index < 4}
+                />
+              </div>
+            </div>
+          <div className="p-6 flex-1 flex flex-col">
             <h3 className="text-xl font-bold text-dark dark:text-white mb-3">
               {service.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-4 flex-1">
               {service.description}
             </p>
             <Link 
@@ -99,8 +106,11 @@ export default function ServicesSection() {
               </svg>
             </Link>
           </div>
+          </div>
         </motion.div>
       ))}
-    </motion.div>
+        </div>
+      </motion.div>
+    </div>
   );
 }

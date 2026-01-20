@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-6">
             <Link href="#">
-              <Icon icon="ph:x-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
+              <Icon icon="ph:linkedin-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
             </Link>
             <Link href="#">
               <Icon icon="ph:facebook-logo-bold" width={24} height={24} className="text-white hover:text-primary duration-300" />
